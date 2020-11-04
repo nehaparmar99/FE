@@ -8,3 +8,15 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
+$("#menuButton").on("click", () => {
+  $("#mySidenav").removeClass("d-none");
+  $("#mySidenav").addClass("d-flex");
+  $("body").css("overflow", "hidden");
+  $("#menuButton").hide();
+});
+$("#close").on("click", () => {
+  $("#mySidenav").removeClass("d-flex");
+  $("#mySidenav").addClass("d-none");
+  $("body").css("overflow", "auto");
+  $("#menuButton").show();
+});

@@ -2,27 +2,31 @@ body {
   background-color: white;
   box-sizing: border-box;
 }
+#menuButton {
+  font-size: 22px !important;
+  z-index: 999;
+  position: absolute;
+}
+#close {
+  font-size: 22px !important;
+  color: black;
+}
 .navbar {
-  margin-top: 40px;
-  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .upgrade {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   text-align: left;
   background-color: whitesmoke;
   width: 120px;
   height: 100px;
-  padding: 10px;
-  margin-left: 55px;
 }
 .sidenav {
-  height: 100%;
+  height: 100vh;
   width: 250px;
   position: fixed;
   z-index: 1;
@@ -30,7 +34,6 @@ body {
   left: 0;
   background-color: white;
   overflow-x: hidden;
-  padding-top: 60px;
   transition: 0.5s;
 }
 .sidenav a {
@@ -44,13 +47,13 @@ body {
 .sidenav a:hover {
   color: black;
 }
-.sidenav .closebtn {
+/* .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}
+} */
 /* @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
@@ -65,18 +68,18 @@ body {
 } */
 #main {
   /* transition: 250px 0.5s; */
-  margin-left: 250px;
+  /* margin-left: 250px;
   padding: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around; */
 }
 .left {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  padding: 10px;
+  /* margin: 10px;
+  padding: 10px; */
   background-color: whitesmoke;
   border-radius: 20px;
 }
@@ -86,12 +89,12 @@ body {
   background-color: whitesmoke;
 }
 .card-list {
-  margin: 5px;
+  /* margin: 5px;
   margin-top: 10px;
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-start; */
   /* overflow-x: scroll; */
 }
 
@@ -111,14 +114,14 @@ body {
 } */
 
 .card {
-  display: flex;
+  /* display: flex;
   position: relative;
-  flex-direction: column;
-  height: 300px;
-  width: 350px;
-  padding: 1.3rem;
+  flex-direction: column; */
+  /* height: 300px; */
+  /* width: 350px; */
+  /* padding: 1.3rem;
   margin: 10px;
-  border-radius: 16px;
+  border-radius: 16px; */
   background: #c9c1d8;
 
   box-shadow: -1rem 0 3rem rgb(201, 189, 189);
@@ -134,10 +137,10 @@ body {
 .card:hover ~ .card {
   transform: translateX(45px);
 }
-
+/* 
 .card:not(:first-child) {
   margin-left: -130px;
-}
+} */
 .card-author {
   position: relative;
   display: grid;
@@ -217,4 +220,34 @@ body {
   -webkit-box-decoration-break: clone;
   background-clip: text;
   border-color: white;
+}
+
+@media only screen and (min-width: 720px) {
+  #menuButton {
+    display: none;
+  }
+  #close {
+    display: none;
+  }
+  #main {
+    width: calc(100vw - 300px);
+    float: right;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .sidenav {
+    animation: ltor 2s normal;
+  }
+  .left {
+    margin-top: 4rem;
+  }
+}
+
+@keyframes ltor {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0px;
+  }
 }
