@@ -67,6 +67,10 @@ body {
   }
 } */
 #main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   /* transition: 250px 0.5s; */
   /* margin-left: 250px;
   padding: 20px;
@@ -78,23 +82,27 @@ body {
 .left {
   display: flex;
   flex-direction: column;
-  /* margin: 10px;
-  padding: 10px; */
+  margin-right: 10px;
+  /* padding: 10px; */
   background-color: whitesmoke;
   border-radius: 20px;
+  min-width: 60%;
+  max-width: 60%;
 }
-
+@media screen and (max-width: 600px) {
+  .left {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
 .right {
   padding: 20px;
   background-color: whitesmoke;
 }
 .card-list {
-  /* margin: 5px;
-  margin-top: 10px;
-  display: flex;
+  margin: 10px;
+
   padding: 20px;
-  flex-wrap: wrap;
-  justify-content: flex-start; */
   /* overflow-x: scroll; */
 }
 
@@ -123,20 +131,15 @@ body {
   margin: 10px;
   border-radius: 16px; */
   background: #c9c1d8;
-
   box-shadow: -1rem 0 3rem rgb(201, 189, 189);
-
   transition: 0.2s;
 }
 .card:hover {
-  transform: translateY(-0.5rem);
   -webkit-box-shadow: -1px 0px 51px -3px rgba(175, 130, 191, 1);
   -moz-box-shadow: -1px 0px 51px -3px rgba(175, 130, 191, 1);
   box-shadow: -1px 0px 51px -3px rgba(175, 130, 191, 1);
 }
-.card:hover ~ .card {
-  transform: translateX(45px);
-}
+
 /* 
 .card:not(:first-child) {
   margin-left: -130px;
@@ -193,10 +196,11 @@ body {
   -webkit-text-fill-color: transparent;
 }
 .tags {
-  margin: 1rem 0 2rem;
-  padding: 0.5rem 0 1rem;
-  line-height: 2;
-  margin-bottom: 0;
+  /* margin-top: 15px; */
+  /* line-height: 2; */
+  padding: 3px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tags a {
@@ -206,9 +210,10 @@ body {
   color: #7a7a8c;
   text-transform: uppercase;
   font-size: 0.66rem;
-  border: 3px solid #28242f;
+  border: 2px solid #28242f;
   border-radius: 2rem;
   padding: 0.2rem 0.85rem 0.25rem;
+  margin: 1px;
   position: relative;
 }
 
