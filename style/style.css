@@ -86,8 +86,8 @@ body {
   /* padding: 10px; */
   background-color: whitesmoke;
   border-radius: 20px;
-  min-width: 60%;
-  max-width: 60%;
+  /* min-width: 60%;
+  max-width: 60%; */
 }
 @media screen and (max-width: 600px) {
   .left {
